@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio 1</title>
+  </head>
+  <body>
+      <form
+        method="POST"
+        name="form_ejercicio1"
+        id="form_ejercicio1"
+        onsubmit="return validarNombres()"
+      >
+        <label>Ingrese un número entre el 3 y el 10: </label>
+        <input
+          type="number"
+          name="numero"
+          id="numero"
+          placeholder="Escriba aquí"
+          min="3"
+          max="10"
+          required
+        /><br />
+        <input type="submit" value="Enviar"/>
+      </form>
+    </div>
+  </body>
+  <script>
+    function validarNombres() {
+      let validar = document.form_ejercicio1.numero.value;
+      let nombresGuardados = [];
+      for (n = 1; n <= validar; n++) {
+        nombre = prompt("Ingrese un nombre:");
+        nombresGuardados.push(nombre);
+        baseDatos = nombresGuardados.join(" - ");
+      }
+      alert(nombresGuardados);
+    }
+  </script>
+</html>

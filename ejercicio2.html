@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio 2</title>
+  </head>
+  <body>
+    <form
+        method="POST"
+        name="form_ejercicio2"
+        id="form_ejercicio2"
+        onsubmit="elegirNumeros()"
+      >
+        <label>Elija el tipo de valor a visualizar: </label>
+        <input
+          type="radio"
+          name="respuesta"
+          value="1"
+          id="resppar"
+        />PAR
+        <input
+          type="radio"
+          name="respuesta"
+          value="2"
+          id="respimp"
+        />IMPAR <br /><br />
+        <input type="submit" value="Enviar"/>
+      </form>
+    </div>
+  </body>
+  <script>
+    function elegirNumeros() {
+      let opcion = document.form_ejercicio2.respuesta.value;
+      let numerosGuardados = [];
+
+      event.preventDefault();
+      for (n = 1; n <= 100; n++) {
+
+        //Buscando los pares
+        if (opcion == 1) {
+          if (n % 2 == 0 && n % 5 == 0) {
+            numerosGuardados.push(n);
+          }
+        }
+        //Buscando los impares
+        if(opcion == 2){
+          if (n % 2 != 0 && n % 5 == 0) {
+            numerosGuardados.push(n);
+          }
+        }
+      }
+      alert(numerosGuardados);
+    }
+  </script>
+</html>
